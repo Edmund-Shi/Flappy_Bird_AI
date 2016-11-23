@@ -15,7 +15,7 @@ class CBird
 {
 public:
 	CBird();
-	~CBird() {}
+	~CBird(){}
 
 	//updates the ANN with information from the sweepers enviroment
 	bool Update(vector<SPoint> &objects);
