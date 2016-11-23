@@ -40,7 +40,7 @@ struct SVector2D
 		return *this;
 	}
 
-  	SVector2D &operator/=(const double &rhs)
+	SVector2D &operator/=(const double &rhs)
 	{
 		x /= rhs;
 		y /= rhs;
@@ -111,11 +111,11 @@ inline int Vec2DSign(SVector2D &v1, SVector2D &v2)
 {
   if (v1.y*v2.x > v1.x*v2.y)
   { 
-    return 1;
+	return 1;
   }
   else 
   {
-    return -1;
+	return -1;
   }
 }
 

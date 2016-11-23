@@ -132,7 +132,7 @@ CController::CController(HWND hwndMain,
 	m_GreenPen       = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 	m_GreyPenDotted  = CreatePen(PS_DOT, 1, RGB(100, 100, 100));
 	m_RedPenDotted   = CreatePen(PS_DOT, 1, RGB(200, 0, 0));
-
+	
 	m_OldPen	= NULL;
 
 	//and the brushes

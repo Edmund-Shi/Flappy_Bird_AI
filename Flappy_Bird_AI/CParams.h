@@ -165,6 +165,12 @@ public:
   static double dCrossoverRate;
 
 
+  //--------------------------------------------
+  //new varibles for CBirds
+  static int iNumBirds;
+  static int iNumBestBirds;
+  static int iNumInputsforBirds;
+  static int iNumOutputsforBirds;
   //---------------------------------------------
 
   //ctor

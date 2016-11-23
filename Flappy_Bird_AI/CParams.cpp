@@ -45,7 +45,10 @@ int CParams::iOldAgeThreshold             = 0;
 double CParams::dOldAgePenalty            = 0;
 double CParams::dCrossoverRate            = 0;
 
-
+int CParams::iNumBirds = 5;
+int CParams::iNumBestBirds = 1;
+int CParams::iNumInputsforBirds = 4;
+int CParams::iNumOutputsforBirds = 1;
 //this function loads in the parameters from a given file name. Returns
 //false if there is a problem opening the file.
 bool CParams::LoadInParameters(char* szFileName)
