@@ -1,6 +1,6 @@
 #include "CBirdController.h"
 #include <cmath>
-
+#include "CBird.h"
 const int NumBirdVerts = 4;
 const SPoint bird[NumBirdVerts] = { SPoint(-1,1),SPoint(1,1),
 									SPoint(1,-1),SPoint(-1,-1) };

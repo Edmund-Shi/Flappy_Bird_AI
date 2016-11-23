@@ -29,6 +29,11 @@ void CBird::Reset() {
 
 }
 
+void CBird::EndOfRunCalculations()
+{
+	m_dFitness += m_dLength;
+}
+
 bool CBird::Update(vector<SPoint> &objects) {
 	vector<double> inputs;
 
@@ -58,7 +63,7 @@ bool CBird::Update(vector<SPoint> &objects) {
 	//Updata the position and the velocity of bird
 	m_dHeight += m_dVelocity * g_dcTiemInterval;
 	m_dAccelerate += m_dAccelerate * g_dcTiemInterval;
-
+	m_dLength += 1;
 	m_vPosition = SVector2D(180, m_dHeight);
 	
 	return true;

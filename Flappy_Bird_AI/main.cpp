@@ -7,6 +7,9 @@
 #include "resource.h"
 #include "CParams.h"
 
+#include "CBird.h"
+#include "CBirdController.h"
+
 
 
 
@@ -18,7 +21,8 @@ char*     szInfoWindowClassName = "Info Window";
 
 
 //The controller class for this simulation
-CController*	g_pController	 = NULL; 
+//CController*	g_pController	 = NULL; 
+CBirdController* g_pController = NULL;
 
 CParams   g_Params;
 
@@ -70,7 +74,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 			cyClient = rect.bottom;
 
 			//setup the controller
-			g_pController = new CController(hwnd, cxClient, cyClient);
+			g_pController = new CBirdController(hwnd, cxClient, cyClient);
 
 				//create a surface for us to render to(backbuffer)
 			hdcBackBuffer = CreateCompatibleDC(NULL);
@@ -102,14 +106,14 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 
 				case 'F':
 					{
-						g_pController->FastRenderToggle();
+						//g_pController->FastRenderToggle();
 					}
 					
 					break;
 
 		case 'B':
 					{
-						g_pController->RenderBestToggle();
+						//g_pController->RenderBestToggle();
 					}
 					
 					break;
@@ -122,10 +126,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 			 }
 
 			 //setup the new controller
-				   g_pController = new CController(hwnd, cxClient, cyClient);
+				   g_pController = new CBirdController(hwnd, cxClient, cyClient);
 
 			 //give the info window's handle to the controller
-			 g_pController->PassInfoHandle(g_hwndInfo); 
+			// g_pController->PassInfoHandle(g_hwndInfo); 
 
 			 //clear info window
 			 InvalidateRect(g_hwndInfo, NULL, TRUE);
@@ -136,28 +140,28 @@ LRESULT CALLBACK WindowProc(HWND hwnd,
 
 		case '1':
 		  {
-			g_pController->ViewBest(1);
+			//g_pController->ViewBest(1);
 		  }
 					
 		break;
 
 		case '2':
 		  {
-			g_pController->ViewBest(2);
+			//g_pController->ViewBest(2);
 		  }
 					
 		break;
 
 		case '3':
 		  {
-			g_pController->ViewBest(3);
+			//g_pController->ViewBest(3);
 		  }
 					
 		break;
 
 		case '4':
 		  {
-			g_pController->ViewBest(4);
+			//g_pController->ViewBest(4);
 		  }
 					
 		break;
@@ -271,7 +275,7 @@ LRESULT CALLBACK InfoWindowProc(HWND hwnd,
 	  
 		  BeginPaint(hwnd, &ps);
 	  
-	  g_pController->RenderNetworks(ps.hdc);
+	 // g_pController->RenderNetworks(ps.hdc);
 
 			EndPaint(hwnd, &ps);
 		} 
@@ -429,18 +433,18 @@ int WINAPI WinMain(	HINSTANCE hinstance,
 			}
 		}
 							
-		if (timer.ReadyForNextFrame() || g_pController->FastRender())
-		{	
-		  if(!g_pController->Update())
-			{
-				//we have a problem, end app
-				bDone = TRUE;
-			}
+	//	if (timer.ReadyForNextFrame() || g_pController->FastRender())
+	//	{	
+	//	  if(!g_pController->Update())
+	//		{
+	//			//we have a problem, end app
+	//			bDone = TRUE;
+	//		}
 
-			//this will call WM_PAINT which will render our scene
-			InvalidateRect(hwnd, NULL, TRUE);
-			UpdateWindow(hwnd);
-	}					
+	//		//this will call WM_PAINT which will render our scene
+	//		InvalidateRect(hwnd, NULL, TRUE);
+	//		UpdateWindow(hwnd);
+	//}					
 					
 	}//end while
 	

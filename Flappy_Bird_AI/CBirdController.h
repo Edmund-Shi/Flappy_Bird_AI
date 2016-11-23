@@ -22,6 +22,7 @@ public:
 	bool Update();
 	vector<double> GetFitnessScores() const;
 	void Render(HDC &surface);
+	void PassInfoHandle(HWND hnd) { m_hwndInfo = hnd; }
 private:
 	
 	//the entire population of chromosomes
