@@ -21,15 +21,15 @@ public:
 	bool Update(vector<SPoint> &objects);
 
 	//used to transform the sweepers vertices prior to rendering
-	void WorldTransform(vector<SPoint> &sweeper, double scale);
+	void WorldTransform(vector<SPoint> &sweeper, double scale) {}
 		 
 	void Reset();
 		 
 	void EndOfRunCalculations();
 
-	void RenderStats(HDC surface);
+	void RenderStats(HDC surface) {}
 
-	void Render(HDC surface);
+	void Render(HDC surface) {}
 
 	void DrawNet(HDC &surface, int cxLeft, int cxRight, int cyTop, int cyBot)
 	{

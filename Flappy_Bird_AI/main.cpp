@@ -432,6 +432,8 @@ int WINAPI WinMain(	HINSTANCE hinstance,
 				DispatchMessage( &msg );
 			}
 		}
+
+		g_pController->Update();
 							
 	//	if (timer.ReadyForNextFrame() || g_pController->FastRender())
 	//	{	
